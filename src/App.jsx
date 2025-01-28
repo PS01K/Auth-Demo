@@ -9,21 +9,29 @@ import Signup from "./Components/SignUp";
 import AuthProvider from "./context/AuthProvider";
 import Login from "./Components/Login";
 import Dashboard from "./Components/Dashboard";
+import Layout from "./Components/Layout";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/signup",
-      element: <Signup />,
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        
+      ]
     },
     {
-      path: "/",
+      path: "/login",
       element: <Login />,
     },
     {
-      path: "/dashboard",
-      element: <Dashboard />
-    }
+      path: "/signup",
+      element: <Signup />,
+    },
   ]);
 
   return (

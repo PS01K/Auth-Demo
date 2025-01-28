@@ -24,15 +24,29 @@ const Login = () => {
     // Add login logic here
     setLoading(true);
     try {
-      const currentUser = await authCtx.login(formData.email, formData.password);
+      const currentUser = await authCtx.login(
+        formData.email,
+        formData.password
+      );
       authCtx.setCurrentUser(currentUser);
       console.log(currentUser);
       navigate("/dashboard");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     setLoading(false);
   };
+
+  async function loginWithGoogle() {
+    try {
+      const currentUser = await authCtx.loginWithGoogle();
+      authCtx.setCurrentUser(currentUser);
+      console.log(currentUser);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return (
     <div className="main max-w-screen-md mx-auto bg-white shadow-md rounded-lg p-6">
@@ -92,6 +106,13 @@ const Login = () => {
       <div className="w-100 text-center mt-2 txt-black">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
+
+      <button
+        onClick={loginWithGoogle}
+        className="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+      >
+        LogIn with Google
+      </button>
     </div>
   );
 };
