@@ -24,9 +24,8 @@ function Layout() {
   
   return (
     <>
-      <h2>Header</h2>
+      {/* <header>Header</header> */}
       <Outlet />
-      <h2>Footer</h2>
     </>
   );
 }

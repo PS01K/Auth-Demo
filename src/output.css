@@ -1,3 +1,27 @@
+.dashboard {
+  height: 500px;
+  width: 600px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1e1e2f, #6a0dad, #0077b6);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dashboard h1{
+  color: #d8b4fe;
+  margin-bottom: 100px;
+}
+
+.dashboard input,
+.dashboard button {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .txt-black {
   color: black;
 }

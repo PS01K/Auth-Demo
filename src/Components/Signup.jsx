@@ -2,6 +2,7 @@ import { useState } from "react";
 import "../output.css";
 import { useAuth } from "../context/AuthProvider";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 function Signup() {
   const authCtx = useAuth();
